@@ -8,5 +8,7 @@ This app comes bundled with ply and the correct python binary and a noob proof b
 
 ## Usage
 1: Open the Batch File
+
 2: Type your DNA File
+
 3: Thats its its converted
