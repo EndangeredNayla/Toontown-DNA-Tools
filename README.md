@@ -1,26 +1,12 @@
-compiler
+DNA 2 PDNA Converted
 ========
-_compiler_ for _libpandadna_ is a utility designed to convert a raw DNA file into a small, easily readable and understandable binary format. This is more or less what Panda3D does with their **bam** model files. Raw DNA files have a **dna** extension, and binary DNA files have a **pdna** extension. This is, of course, for convenience. The extensions can be changed to whatever is desired.
+DNA 2 PDNA is a modification of libpandadna to bundle all third party dependencies and not worrying about your python version.
 
-The thirdparty package _ply_ is required for this script to function. Use this command in order to obtain _ply_ with pip:
-```
-pip install ply
-```
+This app is great for people to compile their DNAs in the libpandadna architecture. It requires no install and all you have to do is clone the repo to get it running.
 
-### Usage ###
-    python compile.py [-h] [--compress] [--verbose] [--logfile LOGFILE]
-                      filenames [filenames ...]
+This app comes bundled with ply and the correct python binary and a noob proof batch script.
 
-### Example ###
-    python compile.py storage.dna
-
-### More info ###
-    positional arguments:
-      filenames              The raw input file(s). Accepts * and ? as wildcards.
-
-    optional arguments:
-      -h, --help            Show this help message and exit.
-      --compress, -c        Compress the output file using ZLib.
-      --verbose, -v         Describe the build process.
-      --logfile LOGFILE, -l LOGFILE
-                            Optional file to write the console output to.
+## Usage
+1: Open the Batch File
+2: Type your DNA File
+3: Thats its its converted
