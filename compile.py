@@ -15,8 +15,6 @@ parser.add_argument('--compress', '-c', action='store_true',
                     help='Compress the output file using ZLib.')
 parser.add_argument('--verbose', '-v', action='store_true',
                     help='Describe the build process.')
-parser.add_argument('--logfile', '-l',
-                    help='Optional file to write the console output to.')
 parser.add_argument('filenames', nargs='+',
                     help='The raw input file(s). Accepts * and ? as wildcards.')
 args = parser.parse_args()
@@ -35,12 +33,6 @@ class LogAndOutput:
         self.file.flush()
         self.out.flush()
 
-
-if args.logfile:
-    sys.stdout = LogAndOutput(sys.stdout, args.logfile)
-    sys.stderr = LogAndOutput(sys.stderr, args.logfile)
-
-
 lexer = lex.lex(optimize=0)
 
 
@@ -50,7 +42,7 @@ __builtins__.DNAError = DNAError
 
 
 def loadDNAFile(dnaStore, filename):
-    print 'Reading DNA file...', filename
+    print 'Analyzing...', filename
     root = DNARoot.DNARoot(name='root', dnaStore=dnaStore)
     with open(filename, 'r') as f:
         data = f.read().strip()
@@ -80,20 +72,6 @@ def process_single_file(filename):
         catalogCodeCount = 0
         for root, codes in dnaStore.catalogCodes.items():
             catalogCodeCount += len(codes)
-        print 'Catalog code count:', catalogCodeCount
-        print 'Texture count:', len(dnaStore.textures)
-        print 'Font count:', len(dnaStore.fonts)
-        print 'Node count:', len(dnaStore.nodes)
-        print 'Hood node count:', len(dnaStore.hoodNodes)
-        print 'Place node count:', len(dnaStore.placeNodes)
-        print 'Block number count:', len(dnaStore.blockNumbers)
-        print 'Block zone ID count:', len(dnaStore.blockZones)
-        print 'Block title count:', len(dnaStore.blockTitles)
-        print 'Block article count:', len(dnaStore.blockArticles)
-        print 'Block building type count:', len(dnaStore.blockBuildingTypes)
-        print 'DNASuitPoint count:', len(dnaStore.suitPoints)
-        print 'DNASuitEdge count:', len(dnaStore.suitEdges)
-    print 'Done processing %s.' % filename
 
 for filename in args.filenames:
     filelist = []
@@ -104,5 +82,3 @@ for filename in args.filenames:
 
     for file in filelist:
         process_single_file(file)
-
-print 'Done.'
