@@ -12,10 +12,7 @@ This app comes bundled with ply and the correct python binary and a noob proof b
 # 🖍 Usage
 
 ## 💻 Windows
-To use this tool simply drag the .DNA files ontop of the **Drag DNA Here.bat** file to convert them.
-
-This tool accept multiple .DNA files at once
-
+To use this tool simply copy the DNA files you want to copy into the folder and run the Compile.bat file.
 
 ## 🐧 Linux
 
