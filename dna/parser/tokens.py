@@ -63,7 +63,7 @@ reserved = {
     'interactive_prop': 'INTERACTIVE_PROP',
     'anim_building': 'ANIM_BUILDING'
 }
-tokens += reserved.values()
+tokens += list(reserved.values())
 t_ignore = ' \t'
 
 literals = '[],'

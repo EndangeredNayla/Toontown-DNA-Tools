@@ -71,7 +71,7 @@ class DNAStorage:
 
         # Catalog codes...
         packer.pack('catalog code root count', len(self.catalogCodes), UINT16)
-        for root, codes in self.catalogCodes.items():
+        for root, codes in list(self.catalogCodes.items()):
             packer.pack('root', root, STRING)
             packer.pack('root code count', len(codes), UINT8)
             for code in codes:
@@ -79,33 +79,33 @@ class DNAStorage:
 
         # Textures...
         packer.pack('texture count', len(self.textures), UINT16)
-        for code, filename in self.textures.items():
+        for code, filename in list(self.textures.items()):
             packer.pack('code', code, STRING)
             packer.pack('filename', filename, STRING)
 
         # Fonts are packed again now we have C++ signs
         packer.pack('font count', len(self.fonts), UINT16)
-        for code, filename in self.fonts.items():
+        for code, filename in list(self.fonts.items()):
             packer.pack('code', code, STRING)
             packer.pack('filename', filename, STRING)
 
         # Nodes...
         packer.pack('node count', len(self.nodes), UINT16)
-        for code, (filename, search) in self.nodes.items():
+        for code, (filename, search) in list(self.nodes.items()):
             packer.pack('code', code, STRING)
             packer.pack('filename', filename, STRING)
             packer.pack('search', search, STRING)
 
         # Hood nodes...
         packer.pack('hood node count', len(self.hoodNodes), UINT16)
-        for code, (filename, search) in self.hoodNodes.items():
+        for code, (filename, search) in list(self.hoodNodes.items()):
             packer.pack('code', code, STRING)
             packer.pack('filename', filename, STRING)
             packer.pack('search', search, STRING)
 
         # Place nodes...
         packer.pack('place node count', len(self.placeNodes), UINT16)
-        for code, (filename, search) in self.placeNodes.items():
+        for code, (filename, search) in list(self.placeNodes.items()):
             packer.pack('code', code, STRING)
             packer.pack('filename', filename, STRING)
             packer.pack('search', search, STRING)
@@ -134,7 +134,7 @@ class DNAStorage:
 
         # Suit edges...
         packer.pack('suit edge count', len(self.suitEdges), UINT16)
-        for startPointIndex, edges in self.suitEdges.items():
+        for startPointIndex, edges in list(self.suitEdges.items()):
             packer.pack('start point index', startPointIndex, UINT16)
             packer.pack('edge count', len(edges), UINT16)
             for edge in edges:

@@ -1,4 +1,4 @@
-import DNAAnimProp
+from . import DNAAnimProp
 from dna.base.DNAPacker import *
 
 

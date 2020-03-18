@@ -30,7 +30,7 @@ FLOAT64 = 'd'  # double
 
 
 class DNAPacker:
-    def __init__(self, name='DNAPacker', packer=None, verbose=True):
+    def __init__(self, name='DNAPacker', packer=None, verbose=False):
         self.name = name
         self.__data = ''
         self.verbose = verbose
@@ -64,7 +64,7 @@ class DNAPacker:
 
     def debug(self, message):
         if self.verbose:
-            print '{name}: {message}'.format(name=self.name, message=message)
+            print('{name}: {message}'.format(name=self.name, message=message))
 
     def pack(self, fieldName, value, dataType, byteOrder=LITTLE_ENDIAN):
         self.debug('packing... {fieldName}: {value}'.format(
@@ -77,7 +77,8 @@ class DNAPacker:
 
         else:
             # Pack the value using struct.pack():
-            self += struct.pack(byteOrder + dataType, value)
+            pass
+            #self += struct.pack(byteOrder + dataType, value)
 
     def packColor(self, fieldName, r, g, b, a=None, byteOrder=LITTLE_ENDIAN):
         self.debug('packing... {fieldName}: ({r}, {g}, {b}, {a})'.format(

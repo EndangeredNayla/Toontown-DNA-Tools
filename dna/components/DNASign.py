@@ -1,5 +1,5 @@
 from dna.base.DNAPacker import *
-from DNANode import DNANode
+from .DNANode import DNANode
 
 
 class DNASign(DNANode):

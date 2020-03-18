@@ -7,7 +7,7 @@ class DNASuitPoint:
         'COGHQ_IN_POINT': 3,
         'COGHQ_OUT_POINT': 4
     }
-    ivPointTypeMap = {v: k for k, v in pointTypeMap.items()}
+    ivPointTypeMap = {v: k for k, v in list(pointTypeMap.items())}
 
     def __init__(self, index, pointType, pos, landmarkBuildingIndex=-1):
         self.index = index
