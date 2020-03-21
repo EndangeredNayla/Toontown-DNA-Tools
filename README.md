@@ -1,6 +1,6 @@
 # DNA Tools
 
-### ⚠️ Notice! - Dhis is only tested with servers that use libpandadna like Toontown Stride 
+### ⚠️ Notice! - This is only tested with servers that use libpandadna like Toontown Stride 
 
 # ❓ What is DNA Tools
 DNA Tools is a modification of libpandadna to bundle all third party dependencies and not worrying about your python version.
