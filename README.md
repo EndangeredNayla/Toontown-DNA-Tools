@@ -1,4 +1,6 @@
-# DNA Tools
+# Toontown DNA Tools
+
+### ⚠️ Notice! - Please use the Python 2 branch if possible.
 
 ### ⚠️ Notice! - This is only tested with servers that use libpandadna like Toontown Stride 
 
